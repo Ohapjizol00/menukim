@@ -8,9 +8,10 @@
 #
 #  Teammate      : WooSung Chung  (wsung0011@naver.com)
 #                : (username, email)
+#                : YunJi Ha (yunji118@naver.com)
 #
-#  Afilimation   : WooSung Chung  (SungKyunKwan University)
-#
+#  Affiliation   : WooSung Chung  (SungKyunKwan University)
+#                : YunJi Ha (Ewha Womans University)
 #  py version    : made by CPython 3.8.3, 64-bit
 #
 #  Modification History:
