@@ -7,16 +7,14 @@
 #  Starting date : June. 30, 2020
 #
 #  Teammate      : WooSung Chung  (wsung0011@naver.com)
-<<<<<<< HEAD
-#                : (username, email)
-#                : YunJi Ha (yunji118@naver.com)
-=======
-#                : kim-kwangyun   (rhkddbs2000@gmail.com)
-#                uyuguguyguyg
->>>>>>> 61786626ba8b65624258bfd2f9173807cdffa5b4
+#                : Seung Gyun Ko  (steveko35@naver.com)
+#                : YunJi Ha       (yunji118@naver.com)
+#                : Kwang Yun Kim  (rhkddbs2000@gmail.com)
 #
 #  Affiliation   : WooSung Chung  (SungKyunKwan University)
+#                : Seung Gyun Ko  (Hanyang University)
 #                : YunJi Ha (Ewha Womans University)
+#
 #  py version    : made by CPython 3.8.3, 64-bit
 #
 #  Modification History:
