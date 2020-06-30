@@ -7,8 +7,13 @@
 #  Starting date : June. 30, 2020
 #
 #  Teammate      : WooSung Chung  (wsung0011@naver.com)
+<<<<<<< HEAD
 #                : (username, email)
 #                : YunJi Ha (yunji118@naver.com)
+=======
+#                : kim-kwangyun   (rhkddbs2000@gmail.com)
+#                uyuguguyguyg
+>>>>>>> 61786626ba8b65624258bfd2f9173807cdffa5b4
 #
 #  Affiliation   : WooSung Chung  (SungKyunKwan University)
 #                : YunJi Ha (Ewha Womans University)
