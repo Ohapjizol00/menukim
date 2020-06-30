@@ -7,7 +7,8 @@
 #  Starting date : June. 30, 2020
 #
 #  Teammate      : WooSung Chung  (wsung0011@naver.com)
-#                : (username, email)
+#                : kim-kwangyun   (rhkddbs2000@gmail.com)
+#                
 #
 #  Afilimation   : WooSung Chung  (SungKyunKwan University)
 #
