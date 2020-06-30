@@ -9,6 +9,8 @@
 #  Teammate      : WooSung Chung  (wsung0011@naver.com)
 #                : (username, email)
 #
+#  Afilimation   : WooSung Chung  (SungKyunKwan University)
+#
 #  py version    : made by CPython 3.8.3, 64-bit
 #
 #  Modification History:
