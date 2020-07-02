@@ -12,12 +12,12 @@
 #                : Seung Gyun Ko   (steveko35@naver.com)
 #                : YunJi Ha        (yunji118@naver.com)
 #                : Kwang Yun Kim   (rhkddbs2000@gmail.com)
-#
+#                : Mi Hyun Kim     (21ssm2026@naver.com)
 #  Affiliation   : Woo Sung Chung  (SungKyunKwan University)
 #                : Seung Gyun Ko   (Hanyang University)
 #                : YunJi Ha        (Ewha Womans University)
 #                : Kwang Yun kim   (Inha University)   
-#
+#                : Mi Hyun Kim     (Hansin University)
 #  py version    : made by CPython 3.8.3, 64-bit
 #
 #  Modification History:
