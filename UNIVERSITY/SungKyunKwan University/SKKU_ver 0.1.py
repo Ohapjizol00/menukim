@@ -210,3 +210,4 @@ if __name__ == "__main__":
 
     _csv_file = pd.DataFrame(_cafe_dict, index=sort_list)
     _csv_file.to_csv("test.csv", "w", encoding="utf-8-sig")
+
