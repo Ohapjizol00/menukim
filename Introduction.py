@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-#  Copyright (c) 2020 by 5HAPZIJOL00, All rights reserved.
+#  Copyright (c) 2020 by 5HAPZIJOL, All rights reserved.
 #
 #  5HAPZIJOL is formed by the students born in 2000. If you have any questions,
 #  please contact to 'Woo Sung Chung'.
