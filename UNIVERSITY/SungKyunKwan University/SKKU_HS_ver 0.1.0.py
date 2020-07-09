@@ -42,12 +42,17 @@ def _date_change(URL, now_time):
     :param URL: URL which would be changed
     :type URL:  list
 
+    :param now_time: date of now
+    :type now_time:  string
+
     :return: none
 
     :precondition: each url in URL should be string type
     """
     assert isinstance(URL, list), \
         "Input should be list"
+    assert isinstance(now_time, str), \
+        "Does now_time is string?"
 
     for index, url in enumerate(URL):
         # Check whether url is string
@@ -56,32 +61,61 @@ def _date_change(URL, now_time):
         URL[index] = url.replace('####-##-##', now_time)
 
 def _get_menu(URL, cafe_list):
-    """ get menu"""
-    html = urlopen(URL)
-    BSobj = bs(html, "html.parser")
-    
-    menu_list = BSobj.findAll("",{"class":"menu_title"})
-    
-    if menu_list == []:
-            cafe_list.append('자료없음')
+    """"Fill the cafe_list with menu.
 
-    else:
-        # make list which control the data
-        d_list = [each_menu.get_text() for each_menu in menu_list]
+    As SKKU '인문사회과학캠퍼스' set 'class = menue_title' in every site,
+    beautifulsoup.select('class')can find menu_title
+    But if class name is changed, you should change those also.
 
-        # Delete the escape letter in menu
-        d_list = [menu.strip() for menu in d_list]
-        d_list = [menu.replace('\n', '/') for menu in d_list]
+    :param URL_list: list of URL which are changed
+    :type URL_list:  list
 
-        # If menu is more than two
-        if len(d_list) != 1:
-            d_list = ['or'.join(d_list)]
+    :param cafe_list: empty list(maybe) which should be filled with menu
+    :type cafe_list:  list
 
-        cafe_list += d_list
+    :return: none
+
+    :precondition: each url in URL should be string type
+                   cafe_list should be empty
+
+    [Notice]  You should run date_change before running this function."""
+    for url in URL:
+        html = urlopen(url)
+        BSobj = bs(html, "html.parser")
+        
+        menu_list = BSobj.findAll("",{"class":"menu_title"})
+        
+        if menu_list == []:
+                cafe_list.append('자료없음')
+
+        else:
+            # make list which control the data
+            d_list = [each_menu.get_text() for each_menu in menu_list]
+
+            # Delete the escape letter in menu
+            d_list = [menu.strip() for menu in d_list]
+            d_list = [menu.replace('\n', '/') for menu in d_list]
+
+            # If menu is more than two
+            if len(d_list) != 1:
+                d_list = ['or'.join(d_list)]
+
+            cafe_list += d_list
 
 
 def _get_cafeteria(URL):
-    """get name of cafeteria"""
+    """Get the name of cafeteria.
+
+    maybe you can skip this function.
+    But as the name of caferia is not a CONSTANT, I recommend to us this.
+
+    :param URL: URL where the name of cafeteria exist.
+    :type URL:  str
+
+    :return: name of cafeteria
+    :rtype:  str
+
+    :precondition: url should be string type"""
     html = urlopen(URL)
     BSobj = bs(html, "html.parser")
 
@@ -134,7 +168,7 @@ _GOL_URL =[
 ]
 
 
-if __name__ == if __name__ == "__main__":
+if __name__ == "__main__":
     _cafe_dict = {}
     _FAC_list = []
     _BAN_list = []
@@ -176,4 +210,4 @@ if __name__ == if __name__ == "__main__":
     _cafe_dict[_GOL_name] = _GOL_list
 
     _csv_file = pd.DataFrame(_cafe_dict, index=sort_list)
-    _csv_file.to_csv("test_NS.csv", encoding="utf-8-sig")
+    _csv_file.to_csv("menu_HS.csv", encoding="utf-8-sig")

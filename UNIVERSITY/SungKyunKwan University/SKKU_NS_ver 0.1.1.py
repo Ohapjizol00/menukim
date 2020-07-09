@@ -227,5 +227,5 @@ if __name__ == "__main__":
     _cafe_dict[_HOR_name] = _HOR_list
 
     _csv_file = pd.DataFrame(_cafe_dict, index=sort_list)
-    _csv_file.to_csv("test.csv", encoding="utf-8-sig")
+    _csv_file.to_csv("menu_NS.csv", encoding="utf-8-sig")
 
