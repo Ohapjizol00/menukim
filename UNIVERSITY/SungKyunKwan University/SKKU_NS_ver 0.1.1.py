@@ -4,16 +4,16 @@
 #
 #  Project             : MenuKim_SKKU
 #
-#  Starting date       : June. 30, 2020
+#  Starting date       : July. 06, 2020
 #
 #  Code Responsibility : Woo Sung Chung  (wsung0011@naver.com)
 #
 #  py version          : made by CPython 3.8.3, 64-bit
 #
 #  Modification History:
-#     * version 0.1, by Woo Sung CHung, Jul. 07, 2020
+#     * version 0.1.0, by Woo Sung CHung, Jul. 07, 2020
 #       - 1st released on this day.
-#
+#     * version 0.1.1, by Woo Sung CHung, Jul. 08, 2020
 '''Sample of menukim in SKKU
 
 make the csv file contains menu in nowaday. Only SKKU '자연과학캠퍼스'
@@ -25,7 +25,7 @@ _get_cafeteria : Get the name of cafeteria *recommended
 _###_URL       : URL of campussite (might be changed)
 
 What should be Imporved:
-    1. Korean brokens when encoding='uft-8', we will not use 'CP949'.
+    1. Korean brokens when encoding='uft-8', we will not use 'CP949'. [fixed]
     2. unefficient and slow.
     3. we donot know all bs4 so should be changed.
     4. '인문사회과학캠퍼스' should be considered.
@@ -34,11 +34,10 @@ What should be Imporved:
 '''
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+from urllib.error import HTTPError
 
 import pandas as pd
-import csv
 import requests
-import re
 import time
 
 
@@ -65,6 +64,25 @@ def _date_change(URL):
             "element in URL should be str type"
         URL[index] = url.replace('####-##-##', now_time)
 
+
+def _URL_check(URL):
+    """Check whether URL exist.
+
+    Return True if URL exist. Return False if page cannot find or there is an
+    error while interpreting the URL.
+
+    :param URL: URL which will be checked
+    :type URL:  str
+
+    :return: True/False
+    :rtype:  Bool
+    """
+    try:
+        _ = urlopen(URL)
+    # URL DNE
+    except HTTPError:
+        return False
+    return True
 
 def _get_menu(URL_list, cafe_list):
     """Fill the cafe_list with menu.
@@ -121,8 +139,7 @@ def _get_menu(URL_list, cafe_list):
 
 
 def _get_cafeteria(URL):
-    '''
-    Get the name of cafeteria.
+    ''' Get the name of cafeteria.
 
     maybe you can skip this function.
     But as the name of caferia is not a CONSTANT, I recommend to us this.
@@ -176,6 +193,7 @@ _HOR_URL = [
     "https://www.skku.edu/skku/campus/support/welfare_11_1.do?mode=info&srDt=####-##-##&srCategory=R&conspaceCd=20201097&srResId=10&srShowTime=D"
 ]
 
+# test work well if run as script
 if __name__ == "__main__":
 
     _cafe_dict = {}
@@ -209,5 +227,5 @@ if __name__ == "__main__":
     _cafe_dict[_HOR_name] = _HOR_list
 
     _csv_file = pd.DataFrame(_cafe_dict, index=sort_list)
-    _csv_file.to_csv("test.csv", "w", encoding="utf-8-sig")
+    _csv_file.to_csv("test.csv", encoding="utf-8-sig")
 
