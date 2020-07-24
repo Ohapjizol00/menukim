@@ -14,7 +14,7 @@
 #     * version 0.1.0, by Woo Sung CHung, Jul. 07, 2020
 #       - 1st released on this day.
 #     * version 0.1.1, by Woo Sung CHung, Jul. 08, 2020
-'''Sample of menukim in SKKU
+'''Sample of menukim in SKKUs
 
 make the csv file contains menu in nowaday. Only SKKU '자연과학캠퍼스'
 csv encoding = 'utf-8-sig,'
@@ -28,7 +28,7 @@ What should be Imporved:
     1. Korean brokens when encoding='uft-8', we will not use 'CP949'. [fixed]
     2. unefficient and slow.
     3. we donot know all bs4 so should be changed.
-    4. '인문사회과학캠퍼스' should be considered.
+    4. '인문사회과학캠퍼스' should be considered. [fixed]
     5. If university change the url a little, it does not works.
     6. Could not confirm the operation on other os except window.
 '''

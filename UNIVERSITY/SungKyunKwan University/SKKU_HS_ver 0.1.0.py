@@ -14,7 +14,7 @@
 #     * version 0.1.0, by Woo Sung CHung, Jul. 07, 2020
 #       - 1st released on this day.
 #
-'''
+'''Sample of menukim in SKKU
 This time, using the findAll()
 '''
 from bs4 import BeautifulSoup as bs
